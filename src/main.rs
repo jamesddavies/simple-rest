@@ -1,15 +1,12 @@
-mod routes;
-mod models;
-mod schema;
-
-use crate::routes::index::index;
-use crate::routes::user::{get_user, save_user};
-use rocket_sync_db_pools::database;
-
 #[macro_use] extern crate rocket;
 
-#[database("simplerest")]
-pub struct Db(diesel::PgConnection);
+use simple_rest::{
+    Db,
+    routes::{
+        index::index, 
+        user::{get_user, save_user}
+    }
+};
 
 #[launch]
 fn rocket() -> _ {

@@ -1,4 +1,4 @@
-use rocket::{serde::json::Json};
+use rocket::{serde::json::Json, get};
 use crate::models::{StatusCheck};
 
 #[get("/")]
